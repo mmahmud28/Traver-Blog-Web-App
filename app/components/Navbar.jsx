@@ -8,7 +8,7 @@ const Navbar = () => {
             <nav className='flex items-center justify-between p-4'>
                 <ul className='flex gap-3'>
                     <li><Link href="/">Home</Link></li>
-                    <li><Link href="/destinations">Destinations</Link></li>
+                    <li><Link href="/destination">Destinations</Link></li>
                     <li><Link href="/bookings">My Bookings</Link></li>
                     <li><Link href="/add-destination">Add Destination</Link></li>
                 </ul>
