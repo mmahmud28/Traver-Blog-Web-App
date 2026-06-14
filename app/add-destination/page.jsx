@@ -7,10 +7,11 @@ const AddDestinationPage = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        const formData = new FormData(e.currentTarget);
-        const data = Object.fromEntries(formData.entries());
 
+        const form = e.currentTarget;
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
 
         const res = await fetch("http://localhost:5000/destinations", {
             method: "POST",
@@ -22,9 +23,10 @@ const AddDestinationPage = () => {
 
         const result = await res.json();
         console.log(result);
-        
 
-    }
+        // Submit সফল হলে form clear
+        form.reset();
+    };
 
     return (
         <div className="max-w-4xl mx-auto mt-10 bg-white p-6 rounded-lg shadow-md">
@@ -51,7 +53,7 @@ const AddDestinationPage = () => {
                     </TextField>
 
                     {/* Category - Updated Select Component */}
-                    <div>
+                    <div >
                         <Select
                             name="category"
                             isRequired
@@ -63,7 +65,7 @@ const AddDestinationPage = () => {
                                 <Select.Value />
                                 <Select.Indicator />
                             </Select.Trigger>
-                            <Select.Popover>
+                            <Select.Popover className="rounded-2xl text-black">
                                 <ListBox>
                                     <ListBox.Item id="Beach" textValue="Beach">
                                         Beach
