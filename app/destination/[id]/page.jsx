@@ -1,4 +1,4 @@
-
+import Button from 'daisyui/components/button';
 import Image from 'next/image';
 import React from 'react';
 
@@ -13,8 +13,16 @@ const DestinationDetailesPage = async ({ params }) => {
 
 
         <div className="min-h-screen max-w-7xl p-5 mx-auto text-black bg-gray-50">
+            <div>
+                <Button className="mb-4 rounded-full bg-gray-200 px-4 py-2 text-sm font-medium hover:bg-gray-300 transition">
+                   Edit Destination
+                </Button>
+                <Button className="mb-4 rounded-full bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600 transition">
+                    Delete Destination
+                </Button>
+            </div>
             {/* Hero Section */}
-            <div className="relative h-[500px] overflow-hidden rounded-b-3xl">
+            <div className="relative h-125 overflow-hidden rounded-b-3xl">
                 <Image
                     src={data.imageUrl}
                     alt={data.destinationName}
@@ -22,7 +30,7 @@ const DestinationDetailesPage = async ({ params }) => {
                     className="object-cover"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />
 
                 <div className="absolute bottom-10 left-10 text-white">
                     <span className="rounded-full bg-white/20 backdrop-blur-md px-4 py-2 text-sm font-medium">
@@ -34,7 +42,7 @@ const DestinationDetailesPage = async ({ params }) => {
                     </h1>
 
                     <p className="mt-2 text-xl">
-                        📍 {data.country}
+                        📍 {data.country}                        
                     </p>
                 </div>
             </div>
@@ -112,7 +120,7 @@ const DestinationDetailesPage = async ({ params }) => {
                                 </div>
                             </div>
 
-                            <button className="mt-8 w-full rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 py-4 text-lg font-semibold  transition hover:scale-105">
+                            <button className="mt-8 w-full rounded-2xl bg-linear-to-r from-blue-600 to-purple-600 py-4 text-lg font-semibold  transition hover:scale-105">
                                 Book Now ✈️
                             </button>
                         </div>
