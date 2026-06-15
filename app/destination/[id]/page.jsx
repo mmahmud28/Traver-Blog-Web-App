@@ -1,22 +1,24 @@
-import Button from 'daisyui/components/button';
+import { Button } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
+import { EditModal } from '../../components/EditModal';
+
 
 
 const DestinationDetailesPage = async ({ params }) => {
     const { id } = await params;
     const res = await fetch(`http://localhost:5000/destinations/${id}`);
-    const data = await res.json();
+    const git add .
+    git  = await res.json();
     console.log(data);
 
     return (
 
 
         <div className="min-h-screen max-w-7xl p-5 mx-auto text-black bg-gray-50">
-            <div>
-                <Button className="mb-4 rounded-full bg-gray-200 px-4 py-2 text-sm font-medium hover:bg-gray-300 transition">
-                   Edit Destination
-                </Button>
+            
+            <div className="flex justify-end gap-4">
+                <EditModal data={data} />
                 <Button className="mb-4 rounded-full bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600 transition">
                     Delete Destination
                 </Button>
