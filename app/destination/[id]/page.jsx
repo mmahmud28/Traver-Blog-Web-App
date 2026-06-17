@@ -2,6 +2,7 @@ import { Button } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 import { EditModal } from '../../components/EditModal';
+import { DeleteData } from '../../components/DeletePage';
 
 
 
@@ -18,9 +19,7 @@ const DestinationDetailesPage = async ({ params }) => {
             
             <div className="flex justify-end gap-4">
                 <EditModal data={data} />
-                <Button className="mb-4 rounded-full bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600 transition">
-                    Delete Destination
-                </Button>
+                <DeleteData data={data}/>
             </div>
             {/* Hero Section */}
             <div className="relative h-125 overflow-hidden rounded-b-3xl">

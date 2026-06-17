@@ -1,6 +1,5 @@
 "use client";
 
-
 import { Button, FieldError, Input, Label, ListBox, TextArea, Select, TextField, Modal, Surface, CloseIcon } from '@heroui/react';
 
 
@@ -11,7 +10,21 @@ export function EditModal({ data }) {
         e.preventDefault();
         const formData = new FormData(e.target);
         const updatedData = Object.fromEntries(formData.entries());
-        console.log(updatedData);
+         
+        const response = await fetch(`http://localhost:5000/destinations/${data._id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedData),
+        });
+        if (response.ok) {
+               //page Reload
+               window.location.reload();
+        } else {
+            
+        }       
+        
     };
 
 
