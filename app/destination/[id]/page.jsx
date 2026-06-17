@@ -8,8 +8,7 @@ import { EditModal } from '../../components/EditModal';
 const DestinationDetailesPage = async ({ params }) => {
     const { id } = await params;
     const res = await fetch(`http://localhost:5000/destinations/${id}`);
-    const git add .
-    git  = await res.json();
+    const data = await res.json();
     console.log(data);
 
     return (
