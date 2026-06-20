@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+
 
 const Navbar = () => {
     return (
@@ -20,7 +20,7 @@ const Navbar = () => {
                 <ul className='flex gap-3'>
                     <li><Link href="/profile">Profile</Link></li>
                     <li><Link href="/login">Login</Link></li>
-                    <li><Link href="/signup">Sign Up</Link></li>
+                    <li><Link href="/signup">Sign Ups</Link></li>
                 </ul>
             </nav>
         </div>
