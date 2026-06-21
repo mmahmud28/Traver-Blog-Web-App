@@ -22,6 +22,7 @@ const SignUpPage = () => {
     });
 
     console.log("Signup response:", { data, error });
+    // data not show
 
 
     };
