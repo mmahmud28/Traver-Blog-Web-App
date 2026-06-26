@@ -4,8 +4,7 @@ const LoginPage = () => {
     return (
         <div>
 
-            <h1>Login</h1>
-            git
+            <h1>Login</h1>            
             
         </div>
     );

@@ -7,22 +7,24 @@ import { authClient } from "../lib/auth-client";
 
 
 const SignUpPage = () => {
-    
+
     const onSubmit = async (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
-    const user = Object.fromEntries(formData.entries());
+        const formData = new FormData(e.currentTarget);
+        const user = Object.fromEntries(formData.entries());
 
-    const {data, error} = await authClient.signup({
-        email: user.email,
-        password: user.password,
-        name: user.name,
-        image: user.image,
-    });
+        log("Form data:", user);
 
-    console.log("Signup response:", { data, error });
-    // data not show
+        // const { data, error } = await authClient.signup({
+        //     email: user.email,
+        //     password: user.password,
+        //     name: user.name,
+        //     image: user.image,
+        // });
+
+        // console.log("Signup response:", { data, error });
+        // data not show
 
 
     };
